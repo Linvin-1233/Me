@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/JetBrainsMono-Bold.woff2");
+}
+@theme {
+    --font-mono: 'JetBrains Mono', 'Courier New', sans-serif;
+    --color-poster-bg: #03050a;
+    --color-poster-panel: #0a0f1d;
+    --color-poster-line: #1e293b;
+    --color-poster-ice:	#bfecff;
+    --color-poster-darkice: #004b5c;
+}
+
+.blueprint-grid {
+    background-image:
+            linear-gradient(to right, rgba(0, 240, 255, 0.015) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 240, 255, 0.015) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+body {
+    background-color: var(--color-poster-bg);
+    color: #94a3b8;
+    font-family: var(--font-mono);
+}
