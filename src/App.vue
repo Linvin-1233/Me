@@ -104,7 +104,7 @@
           </h1>
 
           <p class="text-[9px] sm:text-[11px] md:text-xs tracking-[0.12em] sm:tracking-[0.25em] md:tracking-[0.4em] text-poster-text-muted uppercase font-bold block max-w-xs sm:max-w-none mx-auto whitespace-normal sm:whitespace-nowrap transition-colors duration-300">
-            // SOLID BRUTALISM INTERACTIVE MODULE
+            // H E L L O    W O R L D
           </p>
         </div>
 
@@ -137,6 +137,43 @@
             <p class="text-poster-text-muted text-xs flex items-center gap-1 transition-colors duration-300">
               <span>&gt; 对全栈，web开发也稍有钻研</span><span class="animate-[blink_1s_infinite] text-poster-ice">█</span>
             </p>
+
+            <div class="pt-2 flex flex-wrap gap-3 select-none">
+              <a href="https://github.com/Linvin-1233" target="_blank"
+                 class="flex items-center gap-2 border border-poster-line bg-poster-panel/40 px-2.5 py-1 text-[10px] font-bold tracking-widest text-poster-text-bright hover:bg-poster-ice hover:text-poster-bg hover:border-poster-ice transition-all duration-300 shadow-[2px_2px_0px_var(--poster-shadow)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none group">
+
+                <svg class="w-3.5 h-3.5 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.29.1-2.65 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.36.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                </svg>
+
+                <span class="transition-colors duration-300">[ GITHUB_PROFILE ]</span>
+              </a>
+
+              <a href="https://space.bilibili.com/3546703521122448" target="_blank"
+                 class="flex items-center gap-2 border border-poster-line bg-poster-panel/40 px-2.5 py-1 text-[10px] font-bold tracking-widest text-poster-text-bright hover:bg-poster-ice hover:text-poster-bg hover:border-poster-ice transition-all duration-300 shadow-[2px_2px_0px_var(--poster-shadow)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none group">
+                <svg class="w-3.5 h-3.5 fill-currentColor" viewBox="0 0 512 512">
+                  <path fill="currentColor"
+                        d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z"/>
+                </svg>
+                <span>[ MY_BILIBILI ]</span>
+              </a>
+
+              <a href="https://blog.linvin.net" target="_blank"
+                 class="flex items-center gap-2 border border-poster-line bg-poster-panel/40 px-2.5 py-1 text-[10px] font-bold tracking-widest text-poster-text-bright hover:bg-poster-ice hover:text-poster-bg hover:border-poster-ice transition-all duration-300 shadow-[2px_2px_0px_var(--poster-shadow)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none group">
+
+                <svg class="w-3.5 h-3.5 transition-colors duration-300"
+                     fill="currentColor"
+                     fill-rule="evenodd"
+                     viewBox="0 0 256 295"
+                     xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid">
+                  <path d="M128.04 0L.574 73.768l.016 147.311 127.754 73.465 127.464-73.769.002-147.23L128.039 0z M68.242 211.051l.01-63.7.01-63.702 11.573-6.768 11.085 6.56.12 26.03.12 26.031H165.234l.12-26.013.12-26.014 11.257-6.505 11.412 6.68-.006 63.658-.005 63.659-11.298 6.31-11.361-6.392-.12-25.885-.12-25.886H91.16l-.12 25.878.034 26.008-11.36 6.663-11.47-6.612z" />
+                </svg>
+
+                <span class="transition-colors duration-300">[ MY_BLOG ]</span>
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
@@ -316,7 +353,7 @@
           <span class="inline-block w-1 h-1 bg-emerald-500 animate-pulse"></span>
           <span>SYS_STATUS: RENDER_PACKETS_STABLE</span>
         </div>
-        <div>© 2026 Linvin // STRICT MONOSPACE HARDWARE POSTER</div>
+        <div>© 2026 Linvin </div>
       </footer>
 
     </div>
