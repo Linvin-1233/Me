@@ -128,7 +128,7 @@
           <div class="md:col-span-4 space-y-1">
             <span class="text-[10px] text-poster-text-muted tracking-wider block">ID: 0x7F4A_CORE</span>
             <h2 class="text-poster-title text-2xl md:text-3xl font-extrabold tracking-tight uppercase transition-colors duration-300">
-              INTRODUCTION
+              INTRO<br>DUCTION
             </h2>
           </div>
           <div class="md:col-span-8 space-y-4 text-xs md:text-sm leading-relaxed text-poster-text-bright border-l border-poster-line pl-6 transition-colors duration-300">
