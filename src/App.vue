@@ -1,9 +1,13 @@
 <template>
   <div
       :style="themeVariables"
-      class="min-h-screen bg-poster-bg font-mono text-poster-text antialiased relative pb-16 selection:bg-poster-ice selection:text-black overflow-x-hidden transition-colors duration-500">
+      @click="handleBgClick"
+      class="min-h-screen bg-poster-bg font-mono text-poster-text antialiased relative pb-16 selection:bg-poster-ice selection:text-black overflow-x-hidden transition-colors duration-500 cursor-default">
 
-    <div class="fixed bottom-4 right-4 md:bottom-6 md:right-8 z-50 select-none">
+    <div
+        class="fixed bottom-4 right-4 md:bottom-6 md:right-8 z-50 select-none transition-all duration-300 transform"
+        :class="showThemeBtn ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' : 'opacity-0 translate-y-4 scale-95 pointer-events-none'">
+
       <button
           @click="toggleTheme"
           class="flex items-center gap-3 border-2 border-poster-line bg-poster-panel/90 backdrop-blur-md px-3.5 py-2 text-[10px] font-extrabold tracking-widest text-poster-ice hover:bg-poster-ice hover:text-poster-bg hover:border-poster-ice transition-all duration-300 shadow-[4px_4px_0px_var(--poster-shadow)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none group">
@@ -35,13 +39,10 @@
         </div>
 
         <span class="border-l border-poster-line/40 pl-2.5 group-hover:border-poster-bg/30 transition-colors">
-          [ 状态 // {{ isDark ? 'DARK_&' : 'LIGHT_&' }} ]
-        </span>
+        [ 状态 // {{ isDark ? 'DARK_&' : 'LIGHT_&' }} ]
+      </span>
       </button>
     </div>
-
-
-
 
     <div class="fixed inset-0 z-0 pointer-events-none">
       <div class="absolute inset-0 blueprint-grid opacity-30 dark:opacity-40"></div>
@@ -373,6 +374,14 @@ let themeMedia = null
 const mouseX = ref('50%')
 const mouseY = ref('50%')
 const isClicking = ref(false)
+const showThemeBtn = ref(false)
+
+const handleBgClick = (e) => {
+  if (e.target.closest('button, a, [href], .border-2, .bg-poster-panel')) {
+    return
+  }
+  showThemeBtn.value = !showThemeBtn.value
+}
 
 const friends = ref([
   { name: 'OpenST Portal', bio: 'Minecraft 优秀储电技术档案馆', url: 'https://openstmc.com' },
