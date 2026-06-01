@@ -507,7 +507,7 @@ const parseMarkdownProjects = async () => {
 const fetchCustomStats = async () => {
   try {
     isLangLoading.value = true
-    const response = await fetch('/api-analyzer/api/github-stats?username=Linvin-1233')
+    const response = await fetch('https://github-analyzer.linvin.net/api/github-stats?username=Linvin-1233')
 
     if (!response.ok) throw new Error('ERR_API_RESPONSE_HALT')
     const data = await response.json()
