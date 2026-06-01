@@ -23,3 +23,9 @@ Img: /projects/images/OpenST.png
 Techs: Vue, Vite, Wiki
 Link: https://wiki.openstmc.com
 ---
+Name: GitHub Analyzer
+Description: 检测你在github中最常用语言的百分比
+Img: /projects/images/github-analyzer.png
+Techs: TypeScript, Next.js
+Link: https://github-analyzer.linvin.net
+---

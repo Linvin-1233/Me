@@ -18,4 +18,15 @@ export default defineConfig({
       '@public': fileURLToPath(new URL('./public', import.meta.url))
     },
   },
+  server: {
+    host: true,
+    port: 4000,
+    proxy: {
+      '/api-analyzer': {
+        target: 'https://github-analyzer.linvin.net',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-analyzer/, '')
+      }
+    },
+  }
 })

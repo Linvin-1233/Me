@@ -257,7 +257,7 @@
 
           <div class="flex flex-wrap justify-center gap-1.5 max-w-[45%] sm:max-w-none">
             <span
-                for="p in totalPages"
+                v-for="p in totalPages"
                 :key="p"
                 @click="currentPage = p"
                 :class="currentPage === p ? 'bg-poster-ice text-poster-bg border-poster-ice' : 'bg-poster-panel border-poster-line text-poster-text-muted hover:border-poster-text'"
@@ -285,42 +285,29 @@
           <span>[SEC_03 // TERMINAL_ASSETS]</span>
         </div>
 
-        <div class="md:col-span-7 space-y-4">
-          <div>
-            <span class="text-[10px] text-poster-text-muted tracking-widest block">// CORE_COMPILERS</span>
-            <h3 class="text-sm font-extrabold text-poster-title uppercase transition-colors duration-300">我最常用的语言</h3>
-          </div>
+          <div class="md:col-span-7 space-y-4">
+            <div>
+              <span class="text-[10px] text-poster-text-muted tracking-widest block">// CORE_COMPILERS</span>
+              <h3 class="text-sm font-extrabold text-poster-title uppercase transition-colors duration-300">我最常用的语言</h3>
+            </div>
 
-          <div class="space-y-4 border-2 border-poster-line bg-poster-panel p-6 shadow-[4px_4px_0px_var(--poster-shadow)] transition-all duration-300">
-            <div class="space-y-1.5">
-              <div class="flex justify-between text-xs">
-                <span class="text-poster-text-bright font-bold">HTML</span>
-                <span class="text-poster-ice font-bold animate-pulse">44.53%</span>
+            <div class="space-y-4 border-2 border-poster-line bg-poster-panel p-6 shadow-[4px_4px_0px_var(--poster-shadow)] transition-all duration-300">
+
+              <div v-if="isLangLoading" class="text-xs text-poster-ice tracking-widest text-center py-4 animate-pulse">
+                > FETCHING_ANALYZER_METRICS...
               </div>
-              <div class="h-2 bg-poster-bg border border-poster-line relative overflow-hidden">
-                <div class="h-full bg-poster-ice w-[44.53%] relative striped-loader"></div>
-              </div>
-            </div>
-            <div class="space-y-1.5">
-              <div class="flex justify-between text-xs">
-                <span class="text-poster-text-bright font-bold">CSS</span>
-                <span class="text-poster-ice font-bold animate-pulse">26.45%</span>
-              </div>
-              <div class="h-2 bg-poster-bg border border-poster-line relative overflow-hidden">
-                <div class="h-full bg-poster-ice w-[26.45%] relative striped-loader"></div>
-              </div>
-            </div>
-            <div class="space-y-1.5">
-              <div class="flex justify-between text-xs">
-                <span class="text-poster-text-bright font-bold">TypeScript</span>
-                <span class="text-poster-ice font-bold animate-pulse">11.32%</span>
-              </div>
-              <div class="h-2 bg-poster-bg border border-poster-line relative overflow-hidden">
-                <div class="h-full bg-poster-ice w-[11.32%] relative striped-loader"></div>
+
+              <div v-else v-for="lang in languages" :key="lang.name" class="space-y-1.5">
+                <div class="flex justify-between text-xs">
+                  <span class="text-poster-text-bright font-bold">{{ lang.name }}</span>
+                  <span class="text-poster-ice font-bold animate-pulse">{{ lang.percentage }}</span>
+                </div>
+                <div class="h-2 bg-poster-bg border border-poster-line relative overflow-hidden">
+                  <div class="h-full bg-poster-ice relative striped-loader" :style="{ width: lang.percentage }"></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
         <div class="md:col-span-5 space-y-4">
           <div>
@@ -375,6 +362,8 @@ const mouseX = ref('50%')
 const mouseY = ref('50%')
 const isClicking = ref(false)
 const showThemeBtn = ref(false)
+const languages = ref([])
+const isLangLoading = ref(true)
 
 const handleBgClick = (e) => {
   if (e.target.closest('button, a, [href], .border-2, .bg-poster-panel')) {
@@ -385,7 +374,8 @@ const handleBgClick = (e) => {
 
 const friends = ref([
   { name: 'OpenST Portal', bio: 'Minecraft 优秀储电技术档案馆', url: 'https://openstmc.com' },
-  { name: 'GTMC wiki', bio: 'Minecraft 高质量wiki', url: 'https://beta.techmc.wiki' }
+  { name: 'GTMC wiki', bio: 'Minecraft 高质量wiki', url: 'https://beta.techmc.wiki' },
+  { name: '4rcadia blog', bio: '阿卡迪亚的博客', url: 'https://blog.arcadia.moe'},
 ])
 
 const initTheme = () => {
@@ -514,9 +504,37 @@ const parseMarkdownProjects = async () => {
   }
 }
 
+const fetchCustomStats = async () => {
+  try {
+    isLangLoading.value = true
+    const response = await fetch('/api-analyzer/api/github-stats?username=Linvin-1233')
+
+    if (!response.ok) throw new Error('ERR_API_RESPONSE_HALT')
+    const data = await response.json()
+
+    if (data && data.languages_percentage) {
+      // 解析 API 的 languages_percentage 对象
+      languages.value = Object.entries(data.languages_percentage)
+          .map(([name, val]) => ({
+            name,
+            percentage: val // 保持原样字符串，如 "56.5%"
+          }))
+          // 过滤掉占比为 0.0% 的微量语言，避免撑开控制台布局
+          .filter(lang => parseFloat(lang.percentage) > 0)
+          // 仅截取前 4 种主修语言，使 UI 面板更加精致美观
+          .slice(0, 4)
+    }
+  } catch (error) {
+    console.error('CRITICAL_HALT // ANALYZER_DATA_FLAW:', error)
+  } finally {
+    isLangLoading.value = false
+  }
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true })
   parseMarkdownProjects()
+  fetchCustomStats()
 
   window.addEventListener('pointermove', handlePointerMove, { passive: true })
   window.addEventListener('pointerdown', handlePointerDown, { passive: true })

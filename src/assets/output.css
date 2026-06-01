@@ -8,10 +8,7 @@
     --font-mono: 'JetBrains Mono', 'Courier New', sans-serif;
     --color-emerald-500: oklch(69.6% 0.17 162.48);
     --color-slate-200: oklch(92.9% 0.013 255.508);
-    --color-slate-300: oklch(86.9% 0.022 252.894);
-    --color-slate-400: oklch(70.4% 0.04 256.788);
     --color-slate-500: oklch(55.4% 0.046 257.417);
-    --color-slate-600: oklch(44.6% 0.043 257.281);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -425,20 +422,11 @@
   .w-\[1px\] {
     width: 1px;
   }
-  .w-\[11\.32\%\] {
-    width: 11.32%;
-  }
-  .w-\[26\.45\%\] {
-    width: 26.45%;
-  }
   .w-\[30vw\] {
     width: 30vw;
   }
   .w-\[40vw\] {
     width: 40vw;
-  }
-  .w-\[44\.53\%\] {
-    width: 44.53%;
   }
   .w-full {
     width: 100%;
@@ -782,6 +770,9 @@
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
