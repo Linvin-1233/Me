@@ -29,3 +29,9 @@ Img: /projects/images/github-analyzer.png
 Techs: TypeScript, Next.js
 Link: https://github-analyzer.linvin.net
 ---
+Name: OpenST-QQBot
+Description: 一个完整的bot系统，上传，OpenST稿件管理，ai知识数据库
+Img: 
+Techs: TypeScript, QQ
+Link: https://github.com/OpenST-mc/OpenST-QQBot
+---
