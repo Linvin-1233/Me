@@ -35,3 +35,9 @@ Img:
 Techs: TypeScript, QQ
 Link: https://github.com/OpenST-mc/OpenST-QQBot
 ---
+Name: Blockscope
+Description: 高性能轻量化投影文件转渲染图
+Img: 
+Techs: Rust
+Link: https://blockscope.linvin.net/
+---
